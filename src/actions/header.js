@@ -8,16 +8,7 @@ let menu = [
 ];
 
 function menuOk(){
-  return Promise.resolve(menu);
-  /*
-  return Promise(() => {
-    let wait = setTimeout(() => {
-      clearTimout(wait);
-      alert('YO');
-      resolve(menu);
-    }, 2000)
-  });
-  */
+  return new Promise(resolve => setTimeout(resolve, 2000, menu));
 }
 
 export const headerAction = createActionAsync('HEADER', menuOk);
