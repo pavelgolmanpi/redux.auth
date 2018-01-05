@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Header from '../containers/HeaderContainer'
 import CalledOnce from '../containers/CalledOnceComponentContainer'
 
-class IndexPage extends Component {
+class AnotherPublicPage extends Component {
   render() {
     return (
       <div>
-        <h1>Index Page</h1>
+        <h1>Another Public Page</h1>
         <Header />
         <CalledOnce />
       </div>
@@ -15,4 +15,4 @@ class IndexPage extends Component {
 }
 
 
-export default IndexPage;
+export default AnotherPublicPage;
