@@ -7,8 +7,7 @@ let info = [
 
 var executed = false;
 
-function infoOk(){  
-  console.log(executed);
+function infoOk(){
   return new Promise(resolve => {
     executed ? resolve(info) : (setTimeout(resolve, 5000, info) && (executed = true))
   });

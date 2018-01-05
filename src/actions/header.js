@@ -3,8 +3,8 @@ import {createActionAsync} from 'redux-act-async';
 
 let menu = [
   {title: "Home", url: "/"},
-  {title: "Private", url: "/private"},
-  {title: "Some Public Page", url: "/another-public-page"}
+  {title: "Protected", url: "/protected"},
+  {title: "Public", url: "/public"}
 ];
 
 function menuOk(){

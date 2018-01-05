@@ -5,8 +5,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, browserHistory, Route, IndexRoute, Switch } from 'react-router-dom';
 import reducer from './reducers';
+import PrivateRoute from './routes/private'
 import IndexPage from './pages/IndexPage';
-import AnotherPublicPage from './pages/AnotherPublicPage';
+import PublicPage from './pages/AnotherPublicPage';
+import ProtectedPage from './pages/ProtectedPage'
+import LoginPage from './pages/LoginPage'
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -15,7 +18,9 @@ ReactDOM.render(
     <BrowserRouter history={browserHistory}>
       <Switch>
         <Route exact path="/" component={IndexPage} />
-        <Route exact path="/another-public-page" component={AnotherPublicPage} />
+        <Route path="/public" component={PublicPage} />
+        <Route path="/login" component={LoginPage}/>
+        <PrivateRoute exact path='/protected' component={ProtectedPage} />
       </Switch>
     </BrowserRouter>
   </Provider>
