@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../containers/HeaderContainer'
 import CalledOnce from '../containers/CalledOnceComponentContainer'
+import OnlyForAuthUserInfo from '../containers/OnlyForAuthUserInfoContainer'
 
 class IndexPage extends Component {
   render() {
@@ -9,6 +10,7 @@ class IndexPage extends Component {
         <h1>Index Page</h1>
         <Header />
         <CalledOnce />
+        <OnlyForAuthUserInfo />
       </div>
     );
   }

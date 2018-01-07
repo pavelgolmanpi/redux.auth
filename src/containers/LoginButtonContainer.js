@@ -1,26 +1,22 @@
 import { connect } from 'react-redux'
 import { loginAction } from '../actions/LoginAction';
 import LoginButton from '../components/LoginButton';
-import fakeAuth from '../components/FakeAuth';
-
 
 const mapStateToProps = (state) => {
   const { loading, data, error } = state.loginReducer
-
-  if(!loading && data && data.AUTH_TOKEN){
-    fakeAuth.authenticate(data.AUTH_TOKEN);
-  }
+  let isAuthenticated = state.authReducer.AUTH.AUTH_TOKEN != null;
 
   return {
     loading,
     data,
-    error
+    error,
+    isAuthenticated
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginAction: () => { dispatch(loginAction()) && dispatch(fakeAuth.state()) }
+    loginAction: () => { dispatch(loginAction()) }
   }
 }
 

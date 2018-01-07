@@ -20,7 +20,7 @@ ReactDOM.render(
         <Route exact path="/" component={IndexPage} />
         <Route path="/public" component={PublicPage} />
         <Route path="/login" component={LoginPage}/>
-        <PrivateRoute exact path='/protected' component={ProtectedPage} />
+        <PrivateRoute exact path='/protected' component={ProtectedPage} store={store} />
       </Switch>
     </BrowserRouter>
   </Provider>

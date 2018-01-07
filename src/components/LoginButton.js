@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import fakeAuth from '../components/FakeAuth'
 import { Redirect } from 'react-router-dom'
 
 class LoginButton extends Component {
@@ -16,7 +15,8 @@ class LoginButton extends Component {
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } }
 
-    if(fakeAuth.isAuthenticated()){
+    if(this.props.isAuthenticated){
+      //console.log("REDIRECT AFTER LOGIN");
       return <Redirect to={from} />
     }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import fakeAuth from '../components/FakeAuth'
 import { Redirect } from 'react-router-dom'
 
 class LogoutButton extends Component {
@@ -14,7 +13,8 @@ class LogoutButton extends Component {
   }
 
   render() {
-    if(!fakeAuth.isAuthenticated()){
+    if(!this.props.isAuthenticated){
+      //console.log("REDIRECT AFTER LOGOUT");
       return <Redirect to="/" />
     }
 
