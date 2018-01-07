@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    fakeAuth.isAuthenticated === true
+    fakeAuth.isAuthenticated()
       ? <Component {...props} />
       : <Redirect to={{
           pathname: '/login',

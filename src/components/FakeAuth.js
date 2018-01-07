@@ -1,12 +1,21 @@
 const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100)
+
+  AUTH_TOKEN: null,
+
+  authenticate(AUTH_TOKEN) {
+    this.AUTH_TOKEN = AUTH_TOKEN;
   },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
+  signout() {
+    this.AUTH_TOKEN = null;
+  },
+  isAuthenticated(){
+    return this.AUTH_TOKEN != null;
+  },
+  state(){
+    return {
+      type: "AUTH",
+      payload: this.AUTH_TOKEN
+    }
   }
 }
 
