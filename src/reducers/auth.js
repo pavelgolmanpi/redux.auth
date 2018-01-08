@@ -9,7 +9,7 @@ export default function(state = INITIAL_STATE, action) {
 	  case "LOGIN_OK":
 	  	return { ...state, AUTH: action.payload.response };
     case "LOGOUT_OK":
-	  	return { ...state, AUTH: null };
+	  	return { ...state, AUTH: {AUTH_TOKEN: null} };
 	  default:
 	    return state;
   }
