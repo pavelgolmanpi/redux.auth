@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class OnlyForAuthUserInfo extends Component {
+  propTypes: {
+    isAuthenticated: React.PropTypes.bool.isRequired,
+     loading: React.PropTypes.bool.isRequired,
+     data: React.PropTypes.array.isRequired,
+     error: React.PropTypes.string.isRequired,
+     onlyForAuthUserInfoAction: React.PropTypes.func.isRequired
+   }
+
   componentWillMount() {
     if(this.props.isAuthenticated){
       this.props.onlyForAuthUserInfoAction();

@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
 
 class LoginButton extends Component {
+  propTypes: {
+     isAuthenticated: React.PropTypes.bool.isRequired,
+     location: React.PropTypes.object.isRequired,
+     loginAction: React.PropTypes.func.isRequired
+   }
+
   constructor(props) {
     super(props)
     this.login = this.login.bind(this)

@@ -4,6 +4,13 @@ import UserName from './UserName'
 import LogoutButton from '../containers/LogoutButtonContainer'
 
 class HeaderMenu extends Component {
+  propTypes: {
+     loading: React.PropTypes.bool.isRequired,
+     data: React.PropTypes.array.isRequired,
+     error: React.PropTypes.string.isRequired,
+     headerAction: React.PropTypes.func.isRequired
+   }
+
   componentWillMount() {
     this.props.headerAction();
   }
