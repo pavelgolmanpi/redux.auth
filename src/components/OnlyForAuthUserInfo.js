@@ -23,7 +23,7 @@ class OnlyForAuthUserInfo extends Component {
   }
 
   info(){
-    if(!this.props.loading && this.props.data){
+    if(!this.props.loading && !this.props.error && this.props.data && this.props.isAuthenticated){
       return this.props.data.map((item, i) => <li key={i}>{item.title}</li>)
     }
     return <p>INFO ONLY FOR AUTH USERS</p>

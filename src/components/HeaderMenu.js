@@ -33,8 +33,8 @@ class HeaderMenu extends Component {
     return (
       <div className="container">
         { this.authInfo() }
-        {this.props.loading && <h2>Loading...</h2> }
-        {!this.props.loading && this.props.data && this.props.data.map((item, i) =>
+        {this.props.loading && !this.props.error && <h2>Loading...</h2> }
+        {!this.props.loading && !this.props.error && this.props.data && this.props.data.map((item, i) =>
                   <li key={i}><Link to={item.url}>{item.title}</Link></li>
         )}
 
