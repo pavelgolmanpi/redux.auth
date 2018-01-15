@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 
 class OnlyForAuthUserInfo extends Component {
-  propTypes: {
-    isAuthenticated: React.PropTypes.bool.isRequired,
-     loading: React.PropTypes.bool.isRequired,
-     data: React.PropTypes.array.isRequired,
-     error: React.PropTypes.string.isRequired,
-     onlyForAuthUserInfoAction: React.PropTypes.func.isRequired
-   }
+  
 
   componentWillMount() {
     if(this.props.isAuthenticated){

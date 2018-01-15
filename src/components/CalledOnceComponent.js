@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom';
 
 class CalledOnceComponent extends Component {
 
-  propTypes: {
-     loading: React.PropTypes.bool.isRequired,
-     data: React.PropTypes.array.isRequired,
-     error: React.PropTypes.string.isRequired,
-     calledOnceAction: React.PropTypes.func.isRequired
-   }
+
 
   componentWillMount() {
     this.props.calledOnceAction();

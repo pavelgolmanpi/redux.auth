@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
 
 class LogoutButton extends Component {
-  propTypes: {
-     isAuthenticated: React.PropTypes.bool.isRequired,
-     logoutAction: React.PropTypes.func.isRequired
-   }
+  
 
   constructor(props) {
     super(props)
