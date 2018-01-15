@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import UserName from './UserName'
+import UserNameWithGenerator from './UserNameWithGenerator'
 import LogoutButton from '../containers/LogoutButtonContainer'
 
 class HeaderMenu extends Component {
@@ -13,7 +13,7 @@ class HeaderMenu extends Component {
   authInfo(){
     return this.props.isAuthenticated ? (
       <p>
-        Welcome <UserName />! <LogoutButton />
+        Welcome <UserNameWithGenerator />! <LogoutButton />
       </p>
     ) : (
       <p>
